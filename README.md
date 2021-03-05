@@ -12,8 +12,8 @@
 
 ### 前端界面展示
 <div align=center>
-    <img src="https://github.com/missoy/my-video/blob/main/image/q1.png" width="300" />
-    <img src="https://github.com/missoy/my-video/blob/main/image/q2.png" width="300" />
-    <img src="https://github.com/missoy/my-video/blob/main/image/q3.png" width="300" />
+    <img src="https://github.com/missoy/my-video/blob/main/image/q1.png" /><br>
+    <img src="https://github.com/missoy/my-video/blob/main/image/q2.png" /><br>
+    <img src="https://github.com/missoy/my-video/blob/main/image/q3.png" />
 </div>
 
