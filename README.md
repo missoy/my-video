@@ -7,6 +7,6 @@
 ### 项目截图
 
 <div align=center>
-    <img src="https://www.axiangw.com/wp-content/uploads/2021/01/1610177518-dafef0d0effe93f.jpg" width="200" height="200" />
-    <img src="https://www.axiangw.com/wp-content/uploads/2021/01/1610177518-dafef0d0effe93f.jpg" width="200" height="200" />
+    <img src="https://github.com/missoy/my-video/blob/main/image/feng.jpg" width="200" height="200" />
+    <img src="https://github.com/missoy/my-video/blob/main/image/yun.jpg" width="200" height="200" />
 </div>
