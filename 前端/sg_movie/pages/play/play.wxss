@@ -1,0 +1,77 @@
+video {
+    width: 100%!important;
+    height: 380rpx!important;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.video_title {
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.base_info,.other_info {
+    font-size: 30rpx;
+}
+
+.base_item view {
+    height: 80rpx;
+}
+
+.video_version {
+    font-size: 20rpx;
+    color: #2f8cf5;
+}
+
+.video_version {
+    font-size: 20rpx;
+    color: #2f8cf5;
+}
+
+.base_info image {
+    width: 280rpx;
+    height: 400rpx;
+}
+
+.cs_sets {
+    width: 200rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    font-size: 26rpx;
+}
+
+.cs_padding_l {
+    padding-left: 37.5rpx;
+}
+
+.cs_act {
+    background-color: #85DA46;
+}
+
+.bgbox {
+    position: relative;
+    height: 400rpx;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    background: url('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2798491980,1963709037&fm=26&gp=0.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    height: 400rpx;
+    width: 100%;
+    filter: blur(50rpx);
+}
+
+.content-front {
+    padding: -40rpx;
+    position: relative;
+    height: 400rpx;
+    width: 100%;
+    z-index: 999;
+    color: #000000;
+}

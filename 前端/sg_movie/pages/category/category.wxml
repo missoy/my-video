@@ -1,0 +1,19 @@
+<cu-custom isSearch bgColor="bg-gradual-green">
+    <view slot="backText">搜索</view>
+    <view slot="content">分类</view>
+</cu-custom>
+<view class="cs_warp">
+    <view class="cs_category_tab">
+        <view class="cs_tab_item {{t==0?'cs_act':''}}">全部</view>
+        <view bindtap="tapcategory" class="cs_tab_item {{t==item.type_id?'cs_act':''}}" data-t="{{item.type_id}}" wx:for="{{categorylist}}">{{item.type_name}}</view>
+    </view>
+    <ad binderror="adError" unitId="{{ads['bannerad']}}" wx:if="{{ads['bannerad']}}"></ad>
+    <view class="cs_list">
+        <view bindtap="topaly" class="cs_item" data-vid="{{item.vod_id}}" wx:for="{{list}}" wx:key="index">
+            <image binderror="imgerr" data-index="{{index}}" src="{{item.vod_pic}}"></image>
+            <view class="cs_item_name"> 
+         {{item.vod_name}}
+        </view>
+        </view>
+    </view>
+</view>

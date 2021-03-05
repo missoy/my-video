@@ -1,0 +1,14 @@
+.logo {
+    width: 300rpx;
+    height: 300rpx;
+    overflow: hidden;
+    margin: 50rpx 0;
+}
+
+.cs_copy_right {
+    position: absolute;
+    bottom: 100rpx;
+    font-size: 22rpx;
+    color: #666;
+    padding: 0 80rpx;
+}

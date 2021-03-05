@@ -1,0 +1,37 @@
+<cu-custom bgColor="bg-gradual-green">
+    <view slot="content">
+    搜索
+  </view>
+</cu-custom>
+<view class="cu-bar bg-gradual-green search">
+    <view class="search-form radius">
+        <text class="cuIcon-search"></text>
+        <input bindblur="searchblur" bindinput="inputStr" confirmType="search" placeholder="搜索电影/电视等关键字" type="text" value="{{keyword}}"></input>
+    </view>
+    <view class="action">
+        <text class="cuIcon-search"></text>
+        <text>搜索</text>
+    </view>
+</view>
+<scroll-view scrollY class="search_list solid-bottom" wx:if="{{searching}}">
+    <view class="">
+        <view class="flex-box item item_head">
+            <view class="flex-1">序号</view>
+            <view class="flex-3">电影名称</view>
+            <view class="flex-2">类型</view>
+            <view class="flex-2">资源版本</view>
+        </view>
+        <view bindtap="gotoplay" class="flex-box item" data-vid="{{item.vod_id}}" wx:for="{{search_list}}">
+            <view class="flex-1">{{index+1}}</view>
+            <view class="flex-3 t_hide">{{item.vod_name}}</view>
+            <view class="flex-2 t_hide">{{item.type_name||'未知'}}</view>
+            <view class="flex-2 t_hide">{{item.vod_remarks||'未知'}}</view>
+        </view>
+        <view class="flex-box item t_cen" wx:if="{{search_list.length==0}}">
+        暂无与‘{{keyword}}’匹配结果...
+      </view>
+    </view>
+</scroll-view>
+<view class="btm_banner">
+    <ad binderror="adError" unitId="{{ads['bannerad']}}" wx:if="{{ads['bannerad']}}"></ad>
+</view>

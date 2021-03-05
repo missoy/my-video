@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "sg_movie/pages/index/index",
+    "we7/pages/user/index/index",
+    "sg_movie/pages/play/play",
+    "sg_movie/pages/category/category",
+    "sg_movie/pages/home/home",
+    "sg_movie/pages/search/search",
+    "sg_movie/pages/about/about",
+    "sg_movie/pages/record/record",
+    "sg_movie/pages/tv/tv",
+    "sg_movie/pages/web/web"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#85DA46",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "sg_movie/pages/index/index",
+        "text": "首页",
+        "iconPath": "sg_movie/resource/icon/home.png",
+        "selectedIconPath": "sg_movie/resource/icon/home_act.png"
+      },
+      {
+        "pagePath": "sg_movie/pages/search/search",
+        "text": "搜索",
+        "iconPath": "sg_movie/resource/icon/search.png",
+        "selectedIconPath": "sg_movie/resource/icon/search_act.png"
+      },
+      {
+        "pagePath": "sg_movie/pages/home/home",
+        "text": "我的",
+        "iconPath": "sg_movie/resource/icon/user.png",
+        "selectedIconPath": "sg_movie/resource/icon/user_act.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxdbee79cb2794a634",
+    "wx051e6dbe909dd020",
+    "wx5094eac9e36313a1"
+  ],
+  "sitemapLocation": "sitemap50.json"
+}

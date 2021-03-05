@@ -1,0 +1,78 @@
+<cu-custom bgColor="bg-gradual-black" isBack="{{!is_share}}" isCustom="{{is_share}}">
+    <view slot="content">{{video.vod_name}}{{urllist[index][0]}}</view>
+</cu-custom>
+<view class="bg-black" wx:if="{{config.check==0&&config.jumpmode==0&&!isCard}}">
+    <video autoplay controls showMuteBtn bindended="playend" binderror="playerr" bindloadedmetadata="canplay" bindplay="paly" bindtimeupdate="onplay" data-index="" id="myVideo" poster="{{config.poster}}" src="{{play_url}}" title="{{video.vod_name}}{{urllist[index][0]}}"></video>
+</view>
+<ad adTheme="white" adType="video" binderror="adError" unitId="{{config.ads['videoad']}}" wx:if="{{config.ads['videoad']}}"></ad>
+<view wx:if="{{config.check==0&&config.jumpmode==0}}" wx:for="{{videoline}}" wx:for-index="lineindex" wx:for-item="lineitem" wx:key="*this">
+    <view class="cu-bar bg-white">
+        <view class="action text-bold">
+            <text class="cuIcon-titles text-green"></text>线路{{numstr[lineindex]}}
+      </view>
+        <view class="action">
+          共{{lineitem.length}}个视频
+      </view>
+    </view>
+    <view class="padding-bottom bg-white">
+        <view class="cu-list col-3 grid no-border">
+            <view class="cu-item" wx:for="{{lineitem}}" wx:for-index="idx" wx:for-item="video">
+                <button bindtap="set_url" class="cs_sets {{index==idx&&lineindex==line?'cs_act':''}}" data-index="{{idx}}" data-line="{{lineindex}}" data-url="{{video.url}}">{{video.name}}</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{config.check==0&&config.jumpmode==1}}">
+    <view class="cu-bar bg-white">
+        <view class="action">
+            <text class="cuIcon-video text-green"></text>剧院
+    </view>
+    </view>
+    <view class="padding-bottom bg-white padding">
+        <button bindtap="goplay" class="cu-btn block lg bg-green">去观看</button>
+    </view>
+</view>
+<view class="bgbox">
+    <view class="bg" style="background: url({{video.vod_pic}})"></view>
+    <view class="content-front">
+        <view class="base_info padding-sm">
+            <view class="flex ">
+                <view class="flex-sub text-center">
+                    <view class="cu-avatar lg round" style="background-image: url({{video.vod_pic}})"></view>
+                </view>
+                <view class="flex-twice">
+                    <view class="t_hide">片名：{{video.vod_name}}</view>
+                    <view>版本：{{video.vod_remarks}}</view>
+                </view>
+            </view>
+            <view class="padding">
+                <view class="flex">
+                    <view class="flex-sub">类型：{{video.type_name}}</view>
+                    <view class="flex-sub">语言：{{video.vod_lang}}</view>
+                </view>
+                <view class="flex">
+                    <view class="flex-sub">地区：{{video.vod_area||'未知'}}</view>
+                    <view class="flex-sub">上映：{{video.vod_year}}</view>
+                </view>
+                <view class="flex">
+                    <view class="flex-sub">导演：{{video.vod_director}}</view>
+                    <view class="flex-sub">评分：{{video.vod_score}}</view>
+                </view>
+                <view class="flex">
+                    <view class="flex-sub t_hide">演员：{{video.vod_actor}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<ad unitId="{{config.ads['bannerad']}}" wx:if="{{config.ads['bannerad']}}"></ad>
+<view class="video_info">
+    <view class="cu-bar bg-white margin-top">
+        <view class="action">
+            <text class="cuIcon-creative text-green"></text>剧情
+    </view>
+    </view>
+    <view class="text-df padding bg-white">
+        <rich-text nodes="{{video.vod_content}}"></rich-text>
+    </view>
+</view>

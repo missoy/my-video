@@ -1,0 +1,16 @@
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">关于我们</view>
+</cu-custom>
+<view class="text-center">
+    <view class="text-black lg text-blod text-center padding-top">
+    {{about.name}}
+  </view>
+    <image class="logo" src="{{about.logo}}"></image>
+    <text>
+    {{about.description}}
+  </text>
+</view>
+<view class="cs_copy_right">
+    *声明：本应用资源源自开放网络数据，仅供学习交流，如有侵权请联系删除，本站不承担任何法律责任。
+  </view>

@@ -1,0 +1,146 @@
+<cu-custom isSearch bgColor="bg-gradual-green">
+    <view slot="backText">搜索</view>
+    <view slot="content">
+        <image mode="widthFix" src="{{config.logo}}" wx:if="{{config.logo}}"></image>
+        <text wx:else>{{config.name}}</text>
+    </view>
+</cu-custom>
+<scroll-view scrollWithAnimation scrollX class="bg-white nav" scrollLeft="{{scrollLeft}}">
+    <view bindtap="tabSelect" class="cu-item {{TabCur==0?'text-green cur text-bold':''}}" data-id="0" data-index="0">
+        <text class="cuIcon-hot">热门推荐</text>
+    </view>
+    <view bindtap="tabSelect" class="cu-item {{item.type_id==TabCur?'text-green cur text-bold':''}}" data-id="{{item.type_id}}" data-index="{{index+1}}" wx:for="{{initData.cate}}" wx:key="sb2">
+    {{item.type_name}}
+  </view>
+</scroll-view>
+<swiper bindchange="cardswiper" class="cs_content_box" current="{{current}}" style="height:calc(100vh -  {{CustomBar}}px - 90rpx);">
+    <swiper-item>
+        <scroll-view scrollY class="cs_warp" style="height:calc(100vh -  {{CustomBar}}px - 90rpx);">
+            <view class="banner">
+                <swiper autoplay="true" circular="true" class="screen-swiper square-dot" duration="500" indicatorDots="true" interval="5000">
+                    <swiper-item bindtap="gotoplay" data-vid="{{item.vid}}" wx:for="{{initData.banner}}" wx:key="sb3">
+                        <image mode="aspectFill" src="{{item.imgurl}}"></image>
+                        <view class="banner_name text-center text-white text-xl">
+            {{item.name}}
+          </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view class="hot">
+                <view class="cu-bar bg-white">
+                    <view class="action  text-orange">
+                        <text class="cuIcon-video"></text>热播电影
+          </view>
+                </view>
+                <view class="cu-list col-3 grid no-border cs_padding-lr ">
+                    <view bindtap="gotoplay" class="cu-item" data-vid="{{item.vod_id}}" wx:for="{{initData.hotmovie}}" wx:key="sb4">
+                        <view class="cs_item_1">
+                            <view class="item_img_box">
+                                <image mode="aspectFill" src="{{item.vod_pic}}"></image>
+                                <view class="item_lang text-white padding-lr-xs text-xs ">
+                  {{item.vod_lang}}
+                </view>
+                                <view class="item_vession">
+                {{item.vod_remarks}}
+                </view>
+                            </view>
+                            <view class="cs_video_title item_name">
+                {{item.vod_name}}
+              </view>
+                        </view>
+                    </view>
+                </view>
+                <ad binderror="adError" unitId="adunit-a1083ffd7b4393e8"></ad>
+                <view class="cu-bar bg-white">
+                    <view class="action  text-orange">
+                        <text class="cuIcon-video"></text>热播电视剧
+          </view>
+                </view>
+                <view class="cu-list col-3 grid no-border cs_padding-lr ">
+                    <view bindtap="gotoplay" class="cu-item" data-vid="{{item.vod_id}}" wx:for="{{initData.hottv}}" wx:key="sb5">
+                        <view class="cs_item_1">
+                            <view class="item_img_box">
+                                <image mode="aspectFill" src="{{item.vod_pic}}"></image>
+                                <view class="item_lang text-white padding-lr-xs text-xs ">
+                  {{item.vod_lang}}
+                </view>
+                                <view class="item_vession">
+                {{item.vod_remarks}}
+                </view>
+                            </view>
+                            <view class="cs_video_title item_name">
+                {{item.vod_name}}
+              </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="cu-bar bg-white">
+                <view class="action">
+                    <text class="cuIcon-new text-green"></text>最近更新
+      </view>
+                <view class="action"></view>
+            </view>
+            <view class="cs_video_content">
+                <view class="cu-list col-2 grid no-border">
+                    <view class="cu-item padding-bottom-sm" wx:for="{{initData.new}}" wx:key="index">
+                        <view bindtap="gotoplay" class="cs_video_item" data-vid="{{item.vod_id}}">
+                            <view class="cs_video_banner">
+                                <image data-index="{{index}}" mode="aspectFill" src="{{item.vod_pic}}"></image>
+                                <view class="cs_video_version">
+                                    <view class="flex">
+                                        <view class="flex-sub text-left padding-left-sm">
+                {{item.vod_lang}}
+              </view>
+                                        <view class="flex-treble text-right">
+                  {{item.vod_remarks}}
+              </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="cs_video_basc">
+                                <view class="cs_video_title text-left">{{item.vod_name}}</view>
+                                <view class="flex text-xs">
+                                    <view class="flex-sub text-left">
+                {{item.type_name}}
+              </view>
+                                    <view class="flex-sub text-right">
+                {{item.vod_area}}
+              </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item wx:for="{{initData.cate}}" wx:for-item="itemName" wx:key="*this">
+        <scroll-view scrollY class="cs_warp bg-white" style="height:calc(100vh -  {{CustomBar}}px - 90rpx);">
+            <ad binderror="adError" unitId="adunit-a1083ffd7b4393e8" wx:if="true"></ad>
+            <view class="cu-bar bg-white">
+                <view class="action  text-orange">
+                    <text class="cuIcon-video"></text>最近更新{{itemName.type_name}}
+          </view>
+            </view>
+            <view class="cu-list col-3 grid no-border cs_padding-lr ">
+                <view bindtap="gotoplay" class="cu-item" data-vid="{{item.vod_id}}" wx:for="{{vodlist[itemName.type_id]}}" wx:key="sb1">
+                    <view class="cs_item_1">
+                        <view class="item_img_box">
+                            <image mode="aspectFill" src="{{item.vod_pic}}"></image>
+                            <view class="item_lang text-white padding-lr-xs text-xs ">
+                  {{item.vod_lang}}
+                </view>
+                            <view class="item_vession">
+                {{item.vod_remarks}}
+                </view>
+                        </view>
+                        <view class="cs_video_title item_name">
+                {{item.vod_name}}
+              </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </swiper-item>
+</swiper>

@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "cu-custom": "/sg_movie/colorui/components/cu-custom"
+    }
+}

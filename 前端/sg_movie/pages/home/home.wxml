@@ -1,0 +1,75 @@
+<view class="UCenter-bg">
+    <image class="png cs_avatar cu-avatar round xl" mode="widthFix" src="{{userinfo.wxInfo.avatarUrl}}"></image>
+    <view bindtap="taplogin" class="text-xl">
+      {{userinfo.wxInfo.nickName?userinfo.wxInfo.nickName:'点击登录'}}
+      </view>
+    <view class="margin-top-sm">
+        <text>等级：Lv1</text>
+    </view>
+    <image class="gif-wave" mode="scaleToFill" src="http://comiccdn.isuoge.com/uploads/wave1.gif"></image>
+</view>
+<view class="padding text-center text-grey bg-white shadow-warp">
+    <view class="cu-bar bg-white">
+        <view class="action  text-orange">
+            <text class="cuIcon-attentionfill"></text>最近阅览
+        </view>
+    </view>
+    <scroll-view scrollX style="height:100px">
+        <view class="flex">
+            <view bindtap="gotoplay" class="re_item" data-vid="{{item.vod_id}}" wx:for="{{recordlist}}" wx:key="sb">
+                <view class="cs_item_1">
+                    <view class="item_img_box">
+                        <image mode="aspectFill" src="{{item.vod_pic}}"></image>
+                        <view class="item_lang text-white padding-lr-xs text-xs ">
+                    {{item.vod_lang}}
+                  </view>
+                    </view>
+                    <view class="cs_video_title item_name text-xs">
+                  {{item.vod_name}}
+                </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="cu-list menu  margin-top margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+        <navigator class="content" hoverClass="none" url="/pages/about/log/log">
+            <text class="cuIcon-servicefill text-green"></text>
+            <text class="text-grey">客服</text>
+            <button class="kefu" openType="contact"></button>
+        </navigator>
+    </view>
+    <view class="cu-item arrow">
+        <button class="cu-btn content" openType="feedback">
+            <text class="cuIcon-writefill text-cyan"></text>
+            <text class="text-grey">意见反馈</text>
+        </button>
+    </view>
+    <view class="cu-item arrow">
+        <view bindtap="about" class="content" data-link="https://github.com/weilanwl/ColorUI">
+            <text class="cuIcon-infofill text-grey"></text>
+            <text class="text-grey">关于我们</text>
+        </view>
+    </view>
+</view>
+<ad binderror="adError" unitId="{{ads['bannerad']}}" wx:if="{{ads['bannerad']}}"></ad>
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">授权登录</view>
+            <view bindtap="hideModal" class="action">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl">
+      点击确定授权登录
+    </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class="action">
+                <button bindtap="hideModal" class="cu-btn line-green text-green">取消</button>
+                <button bindgetuserinfo="authlogin" bindtap="hideModal" class="cu-btn bg-green margin-left" openType="getUserInfo">确定</button>
+            </view>
+        </view>
+    </view>
+</view>

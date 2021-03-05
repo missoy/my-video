@@ -1,0 +1,7 @@
+<cu-custom isBack bgColor="bg-gradual-green">
+    <view slot="backText">返回</view>
+    <view slot="content">最近阅览</view>
+</cu-custom>
+<view class="cu-list">
+    <view class="cu-item"></view>
+</view>

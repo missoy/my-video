@@ -1,0 +1,4 @@
+<cu-custom bgColor="bg-gradual-green">
+    <view slot="backText"></view>
+    <view slot="content">电视</view>
+</cu-custom>

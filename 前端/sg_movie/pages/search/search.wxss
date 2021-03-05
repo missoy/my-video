@@ -1,0 +1,61 @@
+.search_box {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    margin-bottom: 30rpx;
+}
+
+.search_top {
+    height: 60rpx;
+    overflow: hidden;
+    padding: 10rpx 20rpx;
+    position: relative;
+}
+
+.search_icon {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 40rpx;
+}
+
+.cs_search_btn {
+    color: #666;
+    position: absolute;
+    top: 18rpx;
+    margin-left: 10rpx;
+}
+
+.search_box input {
+    color: #333;
+    width: 350rpx;
+    height: 60rpx;
+    border-radius: 40rpx;
+    overflow: hidden;
+    padding-left: 50rpx;
+    display: inline-block;
+}
+
+.cs_clear_btn {
+    width: 60rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    display: inline-block;
+    padding-top: 10rpx;
+    position: absolute;
+}
+
+.search_list {
+    height: 800rpx;
+}
+
+.search_list .item {
+    height: 60rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+}
+
+.btm_banner {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
